@@ -3,65 +3,79 @@ var h1El = document.querySelector('#h1');
 var timerEl = document.querySelector('.timer');
 var startBtn = document.querySelector('.startButton');
 var scoreEl = document.querySelector('.score');
+var quizEl = document.querySelector('.quiz');
+var questionsEl = document.querySelector('.quizQuestions');
 
+// My state variables
 var secondsLeft = 10;
 var scoreCounter = 0;
 var pos = 0;
-var secondsLeft = 10;
 
 var questions = [
     {
         question: '1. placeholder question?',
-        a: 'wrong1',
-        b: 'wrong2',
-        c: 'correct',
-        d: 'wrong3',
-        answer: 'c'
+        options: [
+            'wrong1',
+            'wrong2',
+            'correct',
+            'wrong3'
+        ],
+        answer: 2,
     },
     {
         question: '2. placeholder question?',
-        a: 'wrong1',
-        b: 'correct',
-        c: 'wrong2',
-        d: 'wrong3',
-        answer: 'b'
+        options: [
+            'wrong1',
+            'correct',
+            'wrong2',
+            'wrong3'
+        ],
+        answer: 1,
     },
     {
         question: '3. placeholder question?',
-        a: 'correct',
-        b: 'wrong1',
-        c: 'wrong2',
-        d: 'wrong3',
-        answer: 'a' 
+        options: [
+            'correct',
+            'wrong1',
+            'wrong2',
+            'wrong3'
+        ],
+        answer: '0' 
     },
     {
         question: '4. placeholder question?',
-        a: 'wrong1',
-        b: 'wrong2',
-        c: 'wrong3',
-        d: 'correct',
-        answer: 'd'
+        options: [
+            'wrong1',
+            'wrong2',
+            'wrong3',
+            'correct'
+        ],
+        answer: 3,
     },
     {
         question: '5. placeholder question?',
-        a: 'wrong1',
-        b: 'wrong2',
-        c: 'correct',
-        d: 'wrong3',
-        answer: 'c'
+        options: [
+            'wrong1',
+            'wrong2',
+            'correct',
+            'wrong3'
+        ],
+        answer: 2,
     },
     {
         question: '6. placeholder question?',
-        a: 'correct',
-        b: 'wrong1',
-        c: 'wrong2',
-        d: 'wrong3',
-        answer: 'a'
+        options: [
+            'correct',
+            'wrong1',
+            'wrong2',
+            'wrong3'
+        ],
+        answer: 0,
     },
 ];
 // Functions needed
 function startQuiz() {
-    showQuestions();
+    showQuestion();
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timerEl.textContent = secondsLeft + " seconds left!";
@@ -75,11 +89,20 @@ function startQuiz() {
     }, 1000);
 };
 
-function showQuestions() {
+function showQuestion() {
+    //Hide or erase html already in place
+    quizEl.innerHTML = questions.question;
+
+    console.log("should show questions");
+
+    //Show question based on pos create element, append child, innerHTML etc
 };
 
-function checkAnswer() {
-}; 
+//After checkAnswer get next question or follow next index in questions array
+function checkAnswer() {};
+
+//Function that shows welcome game instead of writing it in html
+function welcomeGame() {};
 
 function endGame() {};
 
