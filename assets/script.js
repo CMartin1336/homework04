@@ -11,6 +11,8 @@ var secondsLeft = 10;
 var scoreCounter = 0;
 var pos = 0;
 
+
+var testString = "Can I get this damn thing to work";
 var questions = [
     {
         question: '1. placeholder question?',
@@ -40,7 +42,7 @@ var questions = [
             'wrong2',
             'wrong3'
         ],
-        answer: '0' 
+        answer: 0, 
     },
     {
         question: '4. placeholder question?',
@@ -82,6 +84,7 @@ function startQuiz() {
 
         if(secondsLeft === 0) {
             clearInterval(timerInterval);
+            timerEl.textContent = "Timer";
             alert("You have run out of time!");
             //log score and input name function
         }
@@ -90,19 +93,12 @@ function startQuiz() {
 };
 
 function showQuestion() {
-    //Hide or erase html already in place
-    quizEl.innerHTML = questions.question;
-
-    console.log("should show questions");
-
-    //Show question based on pos create element, append child, innerHTML etc
+   // console.log("should show questions");
+   quizEl.textContent = questions;
 };
 
 //After checkAnswer get next question or follow next index in questions array
 function checkAnswer() {};
-
-//Function that shows welcome game instead of writing it in html
-function welcomeGame() {};
 
 function endGame() {};
 
