@@ -11,66 +11,64 @@ var secondsLeft = 10;
 var scoreCounter = 0;
 var pos = 0;
 
-
-var testString = "Can I get this damn thing to work";
 var questions = [
     {
-        question: '1. placeholder question?',
+        question: '1. What is HTML?',
         options: [
-            'wrong1',
-            'wrong2',
-            'correct',
-            'wrong3'
+            'Hyper Text Math Language',
+            'Hyped Talking Meteor Listener',
+            'Hyper Text Markup Language',
+            'Some Code Stuff'
         ],
         answer: 2,
     },
     {
-        question: '2. placeholder question?',
+        question: '2. What is an array?',
         options: [
-            'wrong1',
-            'correct',
-            'wrong2',
-            'wrong3'
+            'Something found in space',
+            'A group of items put into one specific thing',
+            'It does multiplication',
+            'The thing that destroyed the Death Star'
         ],
         answer: 1,
     },
     {
-        question: '3. placeholder question?',
+        question: '3. Who is Harry Potter?',
         options: [
-            'correct',
-            'wrong1',
-            'wrong2',
-            'wrong3'
+            'The Boy Who Lived',
+            'Darth Vaders Son',
+            'The Destroyer of the One Ring',
+            'The Great and Powerful Oz'
         ],
         answer: 0, 
     },
     {
-        question: '4. placeholder question?',
+        question: '4. Are you a nerd?',
         options: [
-            'wrong1',
-            'wrong2',
-            'wrong3',
-            'correct'
+            'No',
+            'Noooo!',
+            'Not At All',
+            '100% All the Time'
         ],
         answer: 3,
     },
     {
-        question: '5. placeholder question?',
+        question: '5. What is the best team in baseball?',
         options: [
-            'wrong1',
-            'wrong2',
-            'correct',
-            'wrong3'
+            'Cardinals',
+            'Giants',
+            'Dodgers',
+            'Rockies'
         ],
         answer: 2,
     },
     {
-        question: '6. placeholder question?',
+        question: '6. Lakers best player ever?',
         options: [
-            'correct',
-            'wrong1',
-            'wrong2',
-            'wrong3'
+            'Kobe Bryant',
+            'Lebron James',
+            "Shaq O'neal",
+            'James Worthy'
         ],
         answer: 0,
     },
@@ -94,7 +92,12 @@ function startQuiz() {
 
 function showQuestion() {
    // console.log("should show questions");
-   quizEl.textContent = questions;
+   quizEl.innerHTML = "<h1>" + questions[0].question + "</h1>";
+   quizEl.innerHTML += "<button>" + questions[0].options[0] + "</button>" + "<br>";
+   quizEl.innerHTML += "<button>" + questions[0].options[1] + "</button>" + "<br>";
+   quizEl.innerHTML += "<button>" + questions[0].options[2] + "</button>" + "<br>";
+   quizEl.innerHTML += "<button>" + questions[0].options[3] + "</button>" + "<br>";
+   
 };
 
 //After checkAnswer get next question or follow next index in questions array
